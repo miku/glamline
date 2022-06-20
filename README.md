@@ -1,6 +1,7 @@
 # Glamorous command line
 
-> Lightning talk, [Leipzig Gophers](https://golangleipzig.space/) [#28](https://golangleipzig.space/posts/meetup-28-invititation/), 2022-06-21, 19:00 CEST
+> Lightning talk, [Martin Czygan](https://github.com/miku), [Leipzig Gophers](https://golangleipzig.space/)
+> [#28](https://golangleipzig.space/posts/meetup-28-invititation/), 2022-06-21 19:00 CEST
 
 ## Social Text Club
 
@@ -26,13 +27,16 @@ Random voices from the internet (2022-01-23)
 > I love the general renaissance of terminal UI tools we are seeing in the last
 > few years. I can't quite put my finger on what I like about it so much.
 
-> ...
+> [...] I can. Doesn't require a 1.5GB build directory to make a 500MB binary that
+> uses 3GB of RAM to display a chat client/music player/etc.
 
->     I can. Doesn't require a 1.5GB build directory to make a 500MB binary that
->     uses 3GB of RAM to display a chat client/music player/etc.
+There is a certain aura of efficiency around tools which fit into a 24x80 grid.
 
-## Efficiency
+## Glow Markdown Reader
 
-
+![](static/glow.png)
 
 ## SSH
+
+..
+
