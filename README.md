@@ -36,7 +36,19 @@ There is a certain aura of efficiency around tools which fit into a 24x80 grid.
 
 ![](static/glow.png)
 
-## SSH
+Simple, but pleasant.
 
-..
+## Charm
 
+Charm builds cli support tools, OSS
+[company](https://www.crunchbase.com/organization/charm-1814); [Changelog
+481](https://changelog.com/podcast/481), ...
+
+## Universe
+
+* bubbletea tui library
+* wish ssh middleware
+
+## ELM
+
+* Model-View-Update
