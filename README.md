@@ -189,7 +189,7 @@ $ go test -cover -coverprofile coverage.out
 $ gocovsh
 ```
 
-![static/cov1.png)
+![](static/cov1.png)
 
 ### Task Timer
 
