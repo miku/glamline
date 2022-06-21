@@ -198,11 +198,12 @@ $ gocovsh
 
 ### Draw
 
-My two year old found her first bug!
-
 * [https://github.com/maaslalani/draw](https://github.com/maaslalani/draw)
 
 ![](static/draw.png)
+
+> PS. My two year old found her first bug! (panic, when `draw` starts in tmux,
+probably window size is a bit off)
 
 ### Catalog
 
