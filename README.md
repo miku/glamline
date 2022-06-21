@@ -24,7 +24,7 @@ history of [public access unix systems](https://github.com/cwmccabe/pubnixhist),
 
 Random voices from the internet (2022-01-23)
 
-> I love the general renaissance of terminal UI tools we are seeing in the last
+> I love the general *renaissance* of terminal UI tools we are seeing in the last
 > few years. I can't quite put my finger on what I like about it so much.
 
 > [...] I can. Doesn't require a 1.5GB build directory to make a 500MB binary that
@@ -40,11 +40,11 @@ Simple, but pleasant.
 
 ## Charm and Universe
 
-Charm builds cli support tools, OSS
-[company](https://www.crunchbase.com/organization/charm-1814); [Changelog
+Charm builds cli support tools, [OSS
+company](https://www.crunchbase.com/organization/charm-1814); [Changelog
 481](https://changelog.com/podcast/481), ...
 
-A dozen plus open source projects:
+A dozen plus [open source](https://github.com/charmbracelet/) projects:
 
 * bubbletea tui library
 * wish ssh middleware
@@ -85,6 +85,8 @@ GROUP BY author_name ORDER BY count(*) DESC
 LIMIT 20
 ```
 
+That's similar to what `git summary` emits:
+
 ```shell
 $ cat authors.sql | \
     mergestat -r ~/code/rclone/rclone/ -f tsv-noheader | \
@@ -112,7 +114,21 @@ Dan Walters           18
 Anagh Kumar Baranwal  17
 ```
 
-Most modified files in a repo:
+A more complex query; most modified files in a repo (in the past year):
+
+```sql
+-- top 50 files changed most frequently in the past year
+SELECT file_path, COUNT(*)
+FROM commits('/home/tir/code/rclone/rclone'), stats('/home/tir/code/rclone/rclone', commits.hash)
+WHERE
+commits.author_when > DATE('now', '-12 month')
+AND commits.parents < 2 -- ignore merge commits
+GROUP  BY file_path
+ORDER  BY COUNT(*) DESC
+LIMIT  20
+```
+
+It takes a few secondss to calculate.
 
 ```
 $ mergestat -f tsv < modified.sql | column -ts $'\t'
@@ -139,7 +155,7 @@ backend/onedrive/onedrive.go      9
 backend/jottacloud/jottacloud.go  9
 ```
 
-Our question (using [rclone](https://github.com/rclone/rclone/) repo):
+Back to our original question (using [rclone](https://github.com/rclone/rclone/) repo):
 
 * commit last year
 
@@ -160,12 +176,20 @@ $ mergestat -f tsv-noheader < modified.sql | \
 ```
 
 Total number of files in the repo: 2087. **So 40% of the commits happen in less
-than 1% of the files**.
+than 1% of the files** (approximately).
 
 * [x] [Power Law](https://en.wikipedia.org/wiki/Power_law) ([Power Laws in Software](https://www.spinellis.gr/pubs/jrnl/2008-TOSEM-PowerLaws/html/LSV08.pdf) (2008), [citing ...](https://fatcat.wiki/release/nphgdtcrbjguvgd2qoq7tmeoiy/refs-in))
 
-### Go Test Coverage Explorer
+### Go Test Coverage Explorer (gocovsh)
 
+* [gocovsh](https://github.com/orlangure/gocovsh)
+
+```
+$ go test -cover -coverprofile coverage.out
+$ gocovsh
+```
+
+![static/cov1.png)
 
 ### Task Timer
 
