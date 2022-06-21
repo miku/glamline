@@ -10,7 +10,15 @@ import (
 
 	"github.com/charmbracelet/bubbles/textinput"
 	tea "github.com/charmbracelet/bubbletea"
+	"github.com/charmbracelet/lipgloss"
 )
+
+var welcome = `
+**** Welcome to OPAC 2022 ****
+
+Results provided by Fatcat | Perpetual Access to Millions of Open Research
+Publications From Around The World | https://fatcat.wiki/
+`
 
 var start = &Model{
 	Results: []string{},
@@ -35,7 +43,7 @@ func initialModel() *Model {
 }
 
 func (m *Model) Init() tea.Cmd {
-	return textinput.Blink
+	return tea.Batch(textinput.Blink, tea.EnterAltScreen)
 }
 
 func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
@@ -67,7 +75,8 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 func (m *Model) View() string {
 	return fmt.Sprintf(
-		"Welcome to OPAC2022\n\n%s\n\n\n%s",
+		"%s\n\n%s\n\n\n%s",
+		welcome,
 		m.Query.View(),
 		strings.Join(m.Results, "\n"),
 	) + "\n"
@@ -82,6 +91,7 @@ type ReleaseResponse struct {
 			Source struct {
 				Title string `json:"title"`
 				DOI   string `json:"doi"`
+				Ident string `json:"ident"`
 			} `json:"_source"`
 			Type string `json:"_type"`
 		} `json:"hits"`
@@ -102,12 +112,18 @@ type ReleaseResponse struct {
 }
 
 func (r *ReleaseResponse) Summary() (result []string) {
+	var styleTitle = lipgloss.NewStyle().Bold(true)
+	var styleDim = lipgloss.NewStyle().Foreground(lipgloss.Color("#3C3C3C"))
+	var styleDOI = lipgloss.NewStyle().Foreground(lipgloss.Color("5"))
 	for _, h := range r.Hits.Hits {
 		v := strings.TrimSpace(h.Source.Title)
 		if len(v) < 5 {
 			continue
 		}
-		result = append(result, fmt.Sprintf("%s [%s]", h.Source.Title, h.Source.DOI))
+		result = append(result, fmt.Sprintf("%s [%s]\n    %s",
+			styleTitle.Render(h.Source.Title),
+			styleDOI.Render(h.Source.DOI),
+			styleDim.Render("https://fatcat.wiki/release/"+h.Source.Ident)))
 	}
 	return
 }
