@@ -1,14 +1,14 @@
 # Glamorous command line apps
 
 > Lightning talk, [Martin Czygan](https://github.com/miku), [Leipzig Gophers](https://golangleipzig.space/)
-> [#28](https://golangleipzig.space/posts/meetup-28-invititation/), 2022-06-21 19:00 CEST
+> [#28](https://golangleipzig.space/posts/meetup-28-invititation/), [2022-06-21 19:00 CEST](https://www.meetup.com/leipzig-golang/events/282941935/)
 
 ## Social Text Club
 
 * online communities:
   [https://tilde.town/~cmccabe/online-communities.html](https://tilde.town/~cmccabe/online-communities.html),
 history of [public access unix systems](https://github.com/cwmccabe/pubnixhist), [BBS](https://twitter.com/textfiles/status/1279847591312863234),
-[tilde](http://tilde.club/), ...
+[tilde.club](https://tilde.club/), [tilde.town](https://tilde.town), ...
 
 > But at its core, Unix has a social architecture -- [...]
 
@@ -38,25 +38,25 @@ There is a certain aura of efficiency around tools which fit into a 24x80 grid.
 
 Simple, but pleasant.
 
-## Charm
+## Charm and Universe
 
 Charm builds cli support tools, OSS
 [company](https://www.crunchbase.com/organization/charm-1814); [Changelog
 481](https://changelog.com/podcast/481), ...
 
-## Universe
+A dozen plus open source projects:
 
 * bubbletea tui library
 * wish ssh middleware
+* ...
 
-## ELM
+## ELM architecture
 
 * Model-View-Update
 
 TODO: example; chart
 
-## Examples
-
+## More Apps
 
 ### Stock Ticker
 
