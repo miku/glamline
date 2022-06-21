@@ -52,3 +52,16 @@ Charm builds cli support tools, OSS
 ## ELM
 
 * Model-View-Update
+
+## Examples
+
+
+### Stock Ticker
+
+* [https://github.com/achannarasappa/ticker](https://github.com/achannarasappa/ticker)
+
+```
+$ ticker --show-fundamentals -w META,GOOG,AMZN,MSFT,AAPL,NVDA
+```
+
+![](static/ticker.png)
