@@ -195,8 +195,13 @@ $ gocovsh
 
 ### Time Zone (tz)
 
-### Confetty
-
 ### Draw
 
 ### Catalog
+
+### Confetty
+
+Thanks for your attention!
+
+![](static/503249.gif)
+
