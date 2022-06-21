@@ -53,8 +53,9 @@ A dozen plus [open source](https://github.com/charmbracelet/) projects:
 ## ELM architecture
 
 * Model-View-Update
-
-TODO: example; chart
+* A basic model (data)
+* A view function that renders the model
+* An Update callback with events (keys, mouse, ...) that returns an updated model
 
 ## More Apps
 
@@ -128,7 +129,7 @@ ORDER  BY COUNT(*) DESC
 LIMIT  20
 ```
 
-It takes a few secondss to calculate.
+It takes a few seconds to calculate.
 
 ```
 $ mergestat -f tsv < modified.sql | column -ts $'\t'
@@ -193,11 +194,25 @@ $ gocovsh
 
 ### Task Timer
 
-### Time Zone (tz)
+* [https://github.com/caarlos0/tasktimer](https://github.com/caarlos0/tasktimer)
 
 ### Draw
 
+My two year old found her first bug!
+
+
+![](https://github.com/maaslalani/draw)
+
+
 ### Catalog
+
+OPAC in 131 lines of code.
+
+```
+$ go run opac/main.go
+```
+
+![](static/opac.png)
 
 ### Confetty
 
