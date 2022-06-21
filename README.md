@@ -200,9 +200,9 @@ $ gocovsh
 
 My two year old found her first bug!
 
+* [https://github.com/maaslalani/draw](https://github.com/maaslalani/draw)
 
-![](https://github.com/maaslalani/draw)
-
+![](static/draw.png)
 
 ### Catalog
 
