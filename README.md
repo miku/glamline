@@ -207,7 +207,7 @@ probably window size is a bit off)
 
 ### Catalog
 
-OPAC in 131 lines of code.
+OPAC in [115 lines of code](https://github.com/miku/glamline/blob/main/opac/main.go).
 
 ```
 $ go run opac/main.go

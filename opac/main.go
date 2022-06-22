@@ -14,7 +14,7 @@ import (
 )
 
 var welcome = `
-**** Welcome to OPAC 2022 ****
+~~~~ Welcome to OPAC 2022 ~~~~
 
 Results provided by Fatcat | Perpetual Access to Millions of Open Research
 Publications From Around The World | https://fatcat.wiki/
@@ -28,7 +28,6 @@ var start = &Model{
 type Model struct {
 	Query   textinput.Model
 	Results []string
-	Err     error
 }
 
 func initialModel() *Model {
@@ -52,7 +51,6 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	case tea.KeyMsg:
 		switch msg.Type {
 		case tea.KeyEnter:
-			// https://search.fatcat.wiki/release/_search?q=text+user
 			vs := url.Values{}
 			vs.Set("q", m.Query.Value())
 			resp, err := http.Get(fmt.Sprintf("https://search.fatcat.wiki/fatcat_release/_search?%s", vs.Encode()))
@@ -85,36 +83,21 @@ func (m *Model) View() string {
 type ReleaseResponse struct {
 	Hits struct {
 		Hits []struct {
-			Id     string  `json:"_id"`
-			Index  string  `json:"_index"`
-			Score  float64 `json:"_score"`
 			Source struct {
 				Title string `json:"title"`
 				DOI   string `json:"doi"`
 				Ident string `json:"ident"`
 			} `json:"_source"`
-			Type string `json:"_type"`
 		} `json:"hits"`
-		MaxScore float64 `json:"max_score"`
-		Total    struct {
-			Relation string `json:"relation"`
-			Value    int64  `json:"value"`
-		} `json:"total"`
 	} `json:"hits"`
-	Shards struct {
-		Failed     int64 `json:"failed"`
-		Skipped    int64 `json:"skipped"`
-		Successful int64 `json:"successful"`
-		Total      int64 `json:"total"`
-	} `json:"_shards"`
-	TimedOut bool  `json:"timed_out"`
-	Took     int64 `json:"took"`
 }
 
 func (r *ReleaseResponse) Summary() (result []string) {
-	var styleTitle = lipgloss.NewStyle().Bold(true)
-	var styleDim = lipgloss.NewStyle().Foreground(lipgloss.Color("#3C3C3C"))
-	var styleDOI = lipgloss.NewStyle().Foreground(lipgloss.Color("5"))
+	var (
+		styleTitle = lipgloss.NewStyle().Bold(true)
+		styleDim   = lipgloss.NewStyle().Foreground(lipgloss.Color("#3C3C3C"))
+		styleDOI   = lipgloss.NewStyle().Foreground(lipgloss.Color("5"))
+	)
 	for _, h := range r.Hits.Hits {
 		v := strings.TrimSpace(h.Source.Title)
 		if len(v) < 5 {
