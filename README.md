@@ -36,7 +36,7 @@ There is a certain aura of efficiency around tools which fit into a 24x80 grid.
 
 [![](static/glow.png)](https://github.com/charmbracelet/glow)
 
-Simple, but pleasant.
+Simply pleasant.
 
 ## Charm and Universe
 
