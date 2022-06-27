@@ -1,7 +1,7 @@
 # Glamorous command line apps
 
 > Lightning talk, [Martin Czygan](https://github.com/miku), [Leipzig Gophers](https://golangleipzig.space/)
-> [#28](https://golangleipzig.space/posts/meetup-28-invititation/), [2022-06-21 19:00 CEST](https://www.meetup.com/leipzig-golang/events/282941935/)
+> [#28](https://golangleipzig.space/posts/meetup-28-wrapup/), [2022-06-21 19:00 CEST](https://www.meetup.com/leipzig-golang/events/282941935/)
 
 ## Social Text Club
 
