@@ -34,7 +34,7 @@ There is a certain aura of efficiency around tools which fit into a 24x80 grid.
 
 ## Glow Markdown Reader
 
-![](static/glow.png)
+[![](static/glow.png)](https://github.com/charmbracelet/glow)
 
 Simple, but pleasant.
 
