@@ -196,6 +196,10 @@ $ gocovsh
 
 * [https://github.com/caarlos0/tasktimer](https://github.com/caarlos0/tasktimer)
 
+### Presentations in your terminal
+
+[![](https://raw.githubusercontent.com/maaslalani/slides/main/assets/slides.gif)](https://github.com/maaslalani/slides)
+
 ### Draw
 
 * [https://github.com/maaslalani/draw](https://github.com/maaslalani/draw)
