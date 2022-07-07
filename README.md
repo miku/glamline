@@ -118,7 +118,7 @@ Anagh Kumar Baranwal  17
 A more complex query; most modified files in a repo (in the past year):
 
 ```sql
--- top 50 files changed most frequently in the past year
+-- top 20 files changed most frequently in the past year
 SELECT file_path, COUNT(*)
 FROM commits('/home/tir/code/rclone/rclone'), stats('/home/tir/code/rclone/rclone', commits.hash)
 WHERE
